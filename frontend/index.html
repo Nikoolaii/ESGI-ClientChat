@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <script defer src="./dist/bundle.js"></script>
+</head>
+
+<body>
+<div class="modalLogin" id="modalLogin">
+    <div class="login">
+        <h2>Se connecter</h2>
+        <form id="connect-form">
+            <input id="username" placeholder="Nom d'utilisateur" type="text">
+            <input id="login" type="submit" value="Connexion">
+        </form>
+    </div>
+</div>
+
+<div class="header">
+    <h1>Chatbox</h1>
+</div>
+<div class="messageLogs" id="messageLogs">
+</div>
+<form id="messageForm">
+    <div class="messageInput" id="messageInputDiv">
+        <input id="messageInput" name="messageInput" placeholder="Message" type="text">
+        <button id="messageButton">Envoyer</button>
+    </div>
+</form>
+</body>
+
+</html>
