@@ -1,9 +1,13 @@
 import {MongoClient} from 'mongodb';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export class Database {
-    uri = "mongodb+srv://nikolailemerre:ZzhFhLEY15PGHRbP@chat-app.wnfgghk.mongodb.net/?retryWrites=true&w=majority&appName=chat-app";
+    uri = process.env.DB_LINK;
 
     constructor() {
+        console.log(this.uri);
         this.client = new MongoClient(this.uri);
     }
 
@@ -17,13 +21,7 @@ export class Database {
     }
 
     async getCollection(collectionName) {
-        await this.client.db("messages")
-            .collection(collectionName)
-            .find()
-            .toArray((err, result) => {
-                if (err) throw err;
-                return result;
-            });
+        return this.client.db("messages").collection(collectionName).find().toArray();
     }
 
     async insertOne(collectionName, data) {

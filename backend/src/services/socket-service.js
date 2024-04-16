@@ -29,7 +29,7 @@ export class SocketService {
             socket.on("message", (arg) => {
                 console.log("Message sent by :", arg.user.username)
                 this.newMessage(arg);
-                this.getMessages()
+                this.getMessages();
                 socket.broadcast.emit("message", arg);
             });
         });
