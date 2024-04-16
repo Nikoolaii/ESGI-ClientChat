@@ -1,11 +1,11 @@
-import {Socket} from "./socket.js";
-import {API} from "./api.js";
+import {SocketService} from "./src/services/socket-service.js";
+import {ApiService} from "./src/services/api-service.js";
 
-const socketProvider = new Socket();
+const socketProvider = new SocketService();
 socketProvider.connectSocket();
 socketProvider.startEvent();
 
-const APIProvider = new API(socketProvider);
+const APIProvider = new ApiService(socketProvider);
 APIProvider.startServer();
 
 

@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 
-export class API {
+export class ApiService {
     app = express();
     ExpressPort = 4000;
 

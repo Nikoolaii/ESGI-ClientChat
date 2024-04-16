@@ -1,7 +1,7 @@
 import {Server} from "socket.io";
-import {Database} from "./db.js";
+import {Database} from "./db-service.js";
 
-export class Socket {
+export class SocketService {
     port = 3000;
     io = null;
     messages = [];
